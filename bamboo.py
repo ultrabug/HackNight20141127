@@ -44,12 +44,10 @@ try:
         # clear the screen
         lcd.cls()
 
-        # get the employee display name, strip any special character
-        # from his name and get his first and last name
-        display_name = employee.get('displayName', '')
-        display_name = strip_accent(display_name)
-        first_name = display_name.split(' ')[0]
-        last_name = ' '.join(display_name.split(' ')[1:])
+        # get the employee first and last name and strip any special character
+        # as they're not supported by the LCD lib
+        first_name = strip_accent(employee.get('firstName', ''))
+        last_name = strip_accent(employee.get('lastName', ''))
 
         # display, wait a bit and iterate
         lcd.text(center_and_strip(environ.get('BAMBOOHR_SUBDOMAIN', '')))

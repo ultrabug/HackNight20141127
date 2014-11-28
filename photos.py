@@ -54,11 +54,9 @@ try:
         lcd.cls()
         lcd.load_bitmap('/tmp/employee.bmp')
 
-        # get the employee display name, strip any special character
-        # from his name and get his first name
-        display_name = employee.get('displayName', '')
-        display_name = strip_accent(display_name)
-        first_name = display_name.split(' ')[0]
+        # get the employee first and last name and strip any special character
+        # as they're not supported by the LCD lib
+        first_name = strip_accent(employee.get('firstName', ''))
 
         # display the first name, wait a bit and iterate
         lcd.text(center_and_strip(first_name))
