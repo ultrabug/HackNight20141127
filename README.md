@@ -38,3 +38,18 @@ Raspberry Pi, Nokia screen and BambooHR
 
 
 Get, get, get, get down! [Whoooo!](http://www.youtube.com/watch?v=h6kvY5g9KJY)
+
+5 - *Test* the amazing result with the provided source code !
+-------------------------------------------------------------
+
+- photos.py : loop on your employees and display their photo with their first name next to it (amazing !)
+- bamboo.py : loop on your employees and display your BambooHR subdomain and their first name and last name
+
+
+
+How to run (use sudo or run as root) :
+```
+sudo BAMBOOHR_SUBDOMAIN=your_domain BAMBOOHR_API_KEY=your_api_key python photos.py
+
+sudo BAMBOOHR_SUBDOMAIN=your_domain BAMBOOHR_API_KEY=your_api_key python bamboo.py
+```
